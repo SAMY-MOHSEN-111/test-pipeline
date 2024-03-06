@@ -13,12 +13,12 @@ steps:
       targetType: 'inline'
       script: |
         # Write your commands here
-        echo $(baseUrl)
-        echo $(refreshToken)
-        export refreshToken="$(refreshToken)"
-        export baseUrl="$(baseUrl)"
-        echo $baseUrl
-        echo $refreshToken
+        echo "Base URL: $baseUrl"
+        echo "Refresh Token: $refreshToken"
+        export baseUrl="$baseUrl"
+        export refreshToken="$refreshToken"
+        echo "Exported Base URL: $baseUrl"
+        echo "Exported Refresh Token: $refreshToken"
   
   - task: Maven@4
     inputs:
