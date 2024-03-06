@@ -15,8 +15,8 @@ steps:
         # Write your commands here
         echo  $(baseUrl)
         echo  $(refreshToken)
-        export baseUrl="$(baseUrl)"
-        export refreshToken="$(refreshToken)""
+        export baseUrl=$(baseUrl)
+        export refreshToken=$(refreshToken)
         echo $baseUrl
         echo $refreshToken
   
