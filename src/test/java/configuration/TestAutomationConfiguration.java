@@ -24,7 +24,12 @@ public class TestAutomationConfiguration {
                 .body(requestBody)
                 .post();
 
+        System.out.println("before token");
+        System.out.println("refresh-token" + refreshToken);
+
+        response.prettyPrint();
         var token = response.body().jsonPath().get("id_token").toString();
+        System.out.println("after token");
 
         RestAssured.requestSpecification = new RequestSpecBuilder()
                 .setBaseUri(System.getenv("baseUrl"))
