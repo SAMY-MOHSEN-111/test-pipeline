@@ -13,7 +13,7 @@ import java.util.Map;
 public class TestAutomationConfiguration {
     @BeforeSuite
     public void initToken() {
-        var refreshToken = System.getProperty("refreshToken");
+        var refreshToken = System.getenv("refreshToken");
 
         Gson gson = new Gson();
         String requestBody = gson.toJson(RequestTokenDto.builder().refreshToken(refreshToken).build());
@@ -32,7 +32,7 @@ public class TestAutomationConfiguration {
         System.out.println("after token");
 
         RestAssured.requestSpecification = new RequestSpecBuilder()
-                .setBaseUri(System.getProperty("baseUrl"))
+                .setBaseUri(System.getenv("baseUrl"))
                 .addHeader("Authorization", "Bearer " + token)
                 .build();
     }
