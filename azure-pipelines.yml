@@ -10,8 +10,8 @@ steps:
       targetType: 'inline'
       script: |
         # Write your commands here
-        export refresh-token="$(refresh-token)"
-        export base-url="$(base-url)"
+        export refreshToken="$(refreshToken)"
+        export baseUrl="$(baseUrl)"
 
   - task: Maven@4
     inputs:
