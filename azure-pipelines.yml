@@ -13,13 +13,21 @@ steps:
       targetType: 'inline'
       script: |
         # Write your commands here
-        echo $(baseUrl)
-        echo $(refreshToken)
-        export refreshToken="$(refreshToken)"
-        export baseUrl="$(baseUrl)"
+        echo  $(baseUrl)
+        echo  $(refreshToken)
+        export baseUrl=$(baseUrl)
+        export refreshToken=$(refreshToken)
         echo $baseUrl
         echo $refreshToken
   
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo $baseUrl
+        echo $refreshToken
+        printenv
+        
   - task: Maven@4
     inputs:
       mavenPomFile: 'pom.xml'
