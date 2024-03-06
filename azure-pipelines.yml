@@ -14,8 +14,11 @@ steps:
       script: |
         # Write your commands here
         echo $(baseUrl)
+        echo $(refreshToken)
         export refreshToken="$(refreshToken)"
         export baseUrl="$(baseUrl)"
+        echo $baseUrl
+        echo $refreshToken
   
   - task: Maven@4
     inputs:
