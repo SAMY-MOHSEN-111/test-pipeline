@@ -13,6 +13,7 @@ steps:
       targetType: 'inline'
       script: |
         # Write your commands here
+        echo $(baseUrl)
         export refreshToken="$(refreshToken)"
         export baseUrl="$(baseUrl)"
   
