@@ -20,6 +20,14 @@ steps:
         echo $baseUrl
         echo $refreshToken
   
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo $baseUrl
+        echo $refreshToken
+        printenv
+        
   - task: Maven@4
     inputs:
       mavenPomFile: 'pom.xml'
