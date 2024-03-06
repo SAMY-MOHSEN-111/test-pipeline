@@ -4,6 +4,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  - group: rest-assured-framework-variables
+
 steps:
   - task: Bash@3
     inputs:
@@ -12,7 +15,7 @@ steps:
         # Write your commands here
         export refreshToken="$(refreshToken)"
         export baseUrl="$(baseUrl)"
-
+  
   - task: Maven@4
     inputs:
       mavenPomFile: 'pom.xml'
