@@ -26,9 +26,10 @@ public class TestAutomationConfiguration {
 
         System.out.println("before token");
         System.out.println("refresh-token" + refreshToken);
-
         response.prettyPrint();
+
         var token = response.body().jsonPath().get("id_token").toString();
+
         System.out.println("after token");
 
         RestAssured.requestSpecification = new RequestSpecBuilder()
@@ -48,5 +49,10 @@ public class TestAutomationConfiguration {
 
         var id = response.body().jsonPath().get("id");
         Assert.assertEquals(id, "74667d39-873b-450b-9091-db3759b5c292");
+    }
+
+    @Test
+    public void fail(){
+        Assert.assertTrue(false);
     }
 }
